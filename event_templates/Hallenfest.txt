@@ -1,0 +1,4 @@
+EVENT_DESCRIPTION
+1.0
+Hallenfest
+-10  Einladen

@@ -1,0 +1,6 @@
+EVENT_DESCRIPTION
+1.0
+Nikolaus
+-10  Rutenbinden
+-1  Krampusgehen
+0   Nikolausgehen

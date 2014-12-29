@@ -1,0 +1,4 @@
+EVENT_DESCRIPTION
+1.0
+Zechversammlung
+-10  Einladen
