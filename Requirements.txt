@@ -1,0 +1,5 @@
+
+The program uses the following resources:
+
+JDatePicker:   https://github.com/JDatePicker/JDatePicker 
+JTattoo:	   http://www.jtattoo.net/
