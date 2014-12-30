@@ -5,13 +5,16 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.Vector;
 
+import event_handling.EventTemplate;
+import event_handling.RelativeToDo;
+
 public class TemplateEnumerator {
 
-	private Vector<TemplateDesc> TemplateList;
+	private Vector<EventTemplate> TemplateList;
 	
 	public TemplateEnumerator()  throws IOException
 	{
-		TemplateList = new Vector<TemplateDesc>(1);
+		TemplateList = new Vector<EventTemplate>(1);
 		
 		Reload();
 	}
@@ -27,16 +30,16 @@ public class TemplateEnumerator {
 		
 		for(File file : files)
 		{
-		    TemplateDesc tmp = TemplateParser.ParseFile( file );
+		    EventTemplate tmp = TemplateFileParser.ParseFile( file );
 		    
-		    if( tmp.IsValid() )
+		    if( tmp.isValid() )
 		    {
 		    	TemplateList.add( tmp );
 		    }
 		}
 	}
 	
-	public Vector<TemplateDesc> GetTemplateList()
+	public Vector<EventTemplate> GetTemplateList()
 	{
 		return TemplateList;
 	}
@@ -55,7 +58,7 @@ public class TemplateEnumerator {
 
 		for( int i = 0; i < TemplateList.size(); i++ )
 		{
-			str[i] = TemplateList.get(i).GetDescription();
+			str[i] = TemplateList.get(i).getName();
 		}
 		
 		return str;
@@ -69,7 +72,7 @@ public class TemplateEnumerator {
 			( idx <  TemplateList.size() )
 		)
 		{
-			return TemplateList.get( idx ).GetDescription();
+			return TemplateList.get( idx ).getName();
 		}
 		else
 		{

@@ -1,4 +1,119 @@
 EVENT_DESCRIPTION
 1.0
 Stefaniball
--1  Aufbauen
+
+-60
+-
+Flyer designen
+Flyer für diesen Event müssen erstellt werden
+
+-60
+-
+Plakate designen
+Plakate für diesen Evenet müssen erstellt werden
+
+-40
+-
+Flyer-Druck beauftragen
+Flyer-Druck muss beauftragt werden
+
+-40
+-
+Plakate-Druck beauftragen
+Plakate-Druck muss beauftragt werden
+
+-10
+18
+Plakatieren
+Plakate ausfahren
+
+-9
+18
+Plakatieren
+Plakate ausfahren
+
+-1
+15
+Aufbauen
+Bars aufstellen, etc.
+
+1
+-
+Aufräumen
+Festsaal aufräumen
+
+10
+-
+Saufen 1
+Dummy Eintrag
+
+10
+-
+Saufen 2
+Dummy Eintrag
+
+10
+-
+Saufen 3
+Dummy Eintrag
+
+10
+-
+Saufen 4
+Dummy Eintrag
+
+10
+-
+Saufen 5
+Dummy Eintrag
+
+10
+-
+Saufen 6
+Dummy Eintrag
+
+10
+-
+Saufen 7
+Dummy Eintrag
+
+10
+-
+Saufen 8
+Dummy Eintrag
+
+10
+-
+Saufen 9
+Dummy Eintrag
+
+10
+-
+Saufen 10
+Dummy Eintrag
+
+10
+-
+Saufen 11
+Dummy Eintrag
+
+10
+-
+Saufen 12
+Dummy Eintrag
+
+10
+-
+Saufen 13
+Dummy Eintrag
+
+10
+-
+Saufen 14
+Dummy Eintrag
+
+10
+-
+Saufen 15
+Dummy Eintrag
+

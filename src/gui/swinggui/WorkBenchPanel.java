@@ -8,21 +8,22 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
 
+import config.ConfigHandler;
 import template_input.TemplateEnumerator;
 
 public class WorkBenchPanel extends JPanel {
 
 	CardLayout cl;
 	
-	public WorkBenchPanel( TemplateEnumerator TempEnum ){
+	public WorkBenchPanel( TemplateEnumerator tempEnum, ConfigHandler configHandler ){
 		
 		cl = new CardLayout(0, 0);
 		
 		setLayout( cl );
 		
 		HomePanel 			homep 		= new HomePanel();
-		ConfigPanel 		configp 	= new ConfigPanel();
-		CreateEventPanel 	cep 		= new CreateEventPanel( TempEnum );
+		ConfigPanel 		configp 	= new ConfigPanel( configHandler );
+		CreateEventPanel 	cep 		= new CreateEventPanel( tempEnum );
 		DeleteEventPanel 	dep 		= new DeleteEventPanel();
 		
 		add( homep, 	"Home" );

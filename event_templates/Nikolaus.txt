@@ -1,6 +1,19 @@
 EVENT_DESCRIPTION
 1.0
 Nikolaus
--10  Rutenbinden
--1  Krampusgehen
-0   Nikolausgehen
+
+-10
+18
+Rutenbinden
+Treffpunkt Bleierer
+
+-1
+17
+Krampusgehen
+Treffpunkt Bleierer
+
+0
+17
+Nikolausgehen
+Treffpunkt Bleierer
+

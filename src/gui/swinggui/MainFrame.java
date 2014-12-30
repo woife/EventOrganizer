@@ -14,17 +14,18 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
+import config.ConfigHandler;
 import template_input.TemplateEnumerator;
 
 public class MainFrame extends JFrame {
 	
 	WorkBenchPanel wb;
 	
-	public MainFrame( String title, TemplateEnumerator TempEnum ) {
+	public MainFrame( String title, TemplateEnumerator tempEnum, ConfigHandler configHandler ) {
 		super( title );
 		
 		// Create components
-		wb = new WorkBenchPanel( TempEnum);
+		wb = new WorkBenchPanel( tempEnum, configHandler );
 		
 		// Add components to content pane
 		Container c = getContentPane();
@@ -32,8 +33,7 @@ public class MainFrame extends JFrame {
 		c.setLayout(new BoxLayout(c, BoxLayout.Y_AXIS));
 		
 		c.add( wb );
-		
-		
+				
 		// Menu
 		JMenuBar 	menuBar;
 		JMenu 		menu;
