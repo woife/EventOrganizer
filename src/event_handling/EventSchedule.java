@@ -8,9 +8,9 @@ public class EventSchedule {
 	private String	name;
 	private Vector<AbsoluteToDo> todos;
 	
-	public EventSchedule( EventTemplate template, Date eventDate ) {
+	public EventSchedule( String eventName, EventTemplate template, Date eventDate ) {
 		
-		this.setName(template.getName());
+		setName( eventName );
 		
 		todos = new Vector<AbsoluteToDo>(10);
 		for( RelativeToDo relToDo : template.getRelativeToDos() )

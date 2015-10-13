@@ -111,7 +111,7 @@ public class CreateEventPanel extends JPanel {
 
 				EventTemplate 	template 	= TempEnum.GetTemplateList().elementAt( eventType.getSelectedIndex() );
 				Date			eventDate	= utilModel.getValue();
-				EventSchedule 	schedule 	= new EventSchedule( template, eventDate );
+				EventSchedule 	schedule 	= new EventSchedule( eventName.getText(), template, eventDate );
 				
 				EventScheduleDialog scheduleDialog = new EventScheduleDialog( schedule );
 				scheduleDialog.setVisible(true);

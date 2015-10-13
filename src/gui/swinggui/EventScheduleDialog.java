@@ -1,14 +1,17 @@
 package gui.swinggui;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Date;
+import java.io.File;
 
+import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -22,6 +25,7 @@ import net.sourceforge.jdatepicker.impl.JDatePickerImpl;
 import net.sourceforge.jdatepicker.impl.UtilDateModel;
 import event_handling.AbsoluteToDo;
 import event_handling.EventSchedule;
+import export.iCalExporter;
 
 public class EventScheduleDialog extends JDialog {
 
@@ -29,9 +33,13 @@ public class EventScheduleDialog extends JDialog {
 	private JScrollPane scrollPane;
 	
 	private SpinnerDateModel sp;
+	
+	EventSchedule schedule;
 
 	public EventScheduleDialog( EventSchedule schedule )
 	{
+		this.schedule = schedule;
+		
 		setBounds(100, 100, 1000, 500);
 		
 		getContentPane().setLayout(null);
@@ -133,19 +141,56 @@ public class EventScheduleDialog extends JDialog {
 		// Button Pane
 		// --------------------------------------------------------
 		JPanel buttonPane = new JPanel();
-		buttonPane.setBounds(0, 400, 448, 35);
+		buttonPane.setBounds(0, 400, 653, 51);
 		buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		getContentPane().add(buttonPane);
 		{
-			JButton okButton = new JButton("OK");
+			JButton okButton = new JButton("Close");
 			okButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					dispose();
 				}
 			});
+			
+			JButton btnCreateIcal = new JButton("Create iCal");
+			btnCreateIcal.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					ExportAsICal();
+				}
+			});
+			buttonPane.add(btnCreateIcal);
+			
+			Component horizontalStrut = Box.createHorizontalStrut(20);
+			buttonPane.add(horizontalStrut);
+			
+			Component horizontalStrut_1 = Box.createHorizontalStrut(20);
+			buttonPane.add(horizontalStrut_1);
 			okButton.setActionCommand("OK");
 			buttonPane.add(okButton);
 			getRootPane().setDefaultButton(okButton);
+		}
+	}
+	
+	public void ExportAsICal()
+	{
+		// parent component of the dialog
+		 
+		JFileChooser fileChooser = new JFileChooser();
+		fileChooser.setDialogTitle("Specify a file to save");
+
+		String filename = new String( schedule.getName() + ".ics" );
+		File file = new File( filename );
+		
+		fileChooser.setSelectedFile( file );
+		
+		 
+		int userSelection = fileChooser.showSaveDialog(this);
+		 
+		if (userSelection == JFileChooser.APPROVE_OPTION)
+		{
+		    File fileToSave = fileChooser.getSelectedFile();
+		    
+		    iCalExporter.ExportSchedule( schedule, fileToSave );
 		}
 	}
 }
